@@ -1,0 +1,25 @@
+name: Test
+
+on: [push]
+
+jobs:
+  install-test-compile:
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          cache: "yarn"
+
+      - name: Install Dependencies
+        run: |
+          yarn install --frozen-lockfile --network-timeout 300000
+
+      - name: Run tests
+        run: |
+          yarn test

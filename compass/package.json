@@ -1,0 +1,81 @@
+{
+  "name": "compass",
+  "description": "Compass Monorepo",
+  "license": "MIT",
+  "version": "1.0.0",
+  "private": true,
+  "browserslist": "last 2 Chrome versions",
+  "main": "",
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "_moduleAliases": {
+    "@compass/backend": "packages/backend/src",
+    "@compass/core": "packages/core/src",
+    "@compass/scripts": "packages/scripts/src"
+  },
+  "scripts": {
+    "cli": "export NODE_ENV=development && yarn ts-node  --pretty --transpile-only -r tsconfig-paths/register packages/scripts/src/cli",
+    "debug:supertokens": "export DEBUG=com.supertokens && yarn dev:backend",
+    "debug:web": "http-server build/web/",
+    "dev:backend": "yarn dev:backend-start",
+    "dev:backend -verbose": "export DEBUG=* && yarn dev:backend",
+    "dev:backend-start": "cd packages/backend && ts-node-dev --respawn --pretty --transpile-only -r tsconfig-paths/register src/app.ts",
+    "dev:update": "git checkout main && git pull && yarn",
+    "dev:web": "node packages/scripts/src/commands/devWeb.js",
+    "lint -f": "cross-env yarn workspaces run lint-fix",
+    "lint:css": "stylelint 'packages/web/src/**/*.ts'",
+    "postinstall": "husky install | chmod ug+x .husky/*",
+    "test": "yarn jest",
+    "test:backend": "yarn jest backend",
+    "test:core": "yarn test core",
+    "test:web": "yarn test web"
+  },
+  "dependencies": {
+    "@compass/backend": "*",
+    "@compass/core": "*",
+    "module-alias": "^2.2.2",
+    "process": "^0.11.10",
+    "source-map-support": "^0.5.20",
+    "tslib": "^2.4.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.0",
+    "@types/uuid": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "babel-loader": "^9.1.0",
+    "buffer": "^6.0.3",
+    "concurrently": "^8.0.1",
+    "cross-env": "^7.0.3",
+    "crypto-browserify": "^3.12.0",
+    "eslint": "^8.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-lerna": "^2.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jest": "^27.0.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^9.0.11",
+    "jest": "^29.0.3",
+    "lint-staged": "^13.0.3",
+    "path-browserify": "^1.0.1",
+    "prettier": "^2.5.1",
+    "stream-browserify": "^3.0.0",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.1.6"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": []
+  }
+}

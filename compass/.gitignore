@@ -1,0 +1,45 @@
+#########
+# FILES #
+#########
+build.zip
+.DS_Store
+.eslintcache
+.idea/
+.vscode/
+globalConfig.json
+sendgrid.env
+credentials.txt
+
+# wildcards
+*.env*
+*.log
+*.mongodb
+*.tsbuildinfo
+packages/**/yarn.lock
+
+########
+# DIRS #
+########
+# root
+build/
+buildcache/
+logs/
+node_modules/
+
+#core
+packages/core/build/
+
+# web
+packages/web/node_modules/
+packages/web/build/
+
+# backend
+packages/backend/logs
+packages/backend/build
+packages/backend/node_modules
+packages/backend/playgroud
+packages/backend/.env
+packages/backend/.prod.env
+
+
+!.env.project

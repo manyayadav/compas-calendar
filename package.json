@@ -1,6 +1,6 @@
 {
-  "name": "compass",
-  "description": "Compass",
+  "name": "compas",
+  "description": "Compas",
   "version": "1.0.0",
   "private": true,
   "browserslist": "last 2 Chrome versions",
@@ -9,9 +9,9 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "_moduleAliases": {
-    "@compass/backend": "packages/backend/src",
-    "@compass/core": "packages/core/src",
-    "@compass/scripts": "packages/scripts/src"
+    "@compas/backend": "packages/backend/src",
+    "@compas/core": "packages/core/src",
+    "@compas/scripts": "packages/scripts/src"
   },
   "scripts": {
     "cli": "export NODE_ENV=development && yarn ts-node  --pretty --transpile-only -r tsconfig-paths/register packages/scripts/src/cli",
@@ -31,8 +31,8 @@
     "test:web": "yarn test web"
   },
   "dependencies": {
-    "@compass/backend": "*",
-    "@compass/core": "*",
+    "@compas/backend": "*",
+    "@compas/core": "*",
     "module-alias": "^2.2.2",
     "process": "^0.11.10",
     "source-map-support": "^0.5.20",

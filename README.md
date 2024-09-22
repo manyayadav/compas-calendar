@@ -1,8 +1,8 @@
-# 📅 COMPAS - Calendar Organisation and Management for Personal Activities and Scheduling
+# 📅 CalSync - Calendar Organisation and Management for Personal Activities and Scheduling
 
 ## Overview
 
-### _COMPAS is Basic User Calendar System with Google Calendar Integration._
+### _CALSYNC is Basic User Calendar System with Google Calendar Integration._
 
 ## Features
 
@@ -25,14 +25,14 @@ cd compas
 ### 2. Create .env file and add the credentials
 
 ### 3. Setup Accounts
-COMPAS relies on a few external services. Let's start by creating accounts for those and adding the credentials to that environment file.
+CALSYNC relies on a few external services. Let's start by creating accounts for those and adding the credentials to that environment file.
 
 Google OAuth:
-COMPAS uses the Google Calendar API to import and sync events from GCal. Refer to 
+CALSYNC uses the Google Calendar API to import and sync events from GCal. Refer to 
 https://developers.google.com/identity/protocols/oauth2/web-server for setting up crendentials- Client's URL and Client's Secret
 
 ### 4. MongoDB
-COMPAS connects to MongoDB through the NodeJS driver.
+CALSYNC connects to MongoDB through the NodeJS driver.
 
 Create a free MongoDB Atlas account
 
